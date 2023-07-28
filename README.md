@@ -21,11 +21,16 @@ Launch entire server setup
 docker-compose up
 ```
 
-Dump data in mysql db
+Dump data in mysql db--for Mac users
 ```
 docker exec -i mysql sh -c 'exec mysql -uroot -p"$MYSQL_ROOT_PASSWORD"' < "./database-dump/mysqlsampledatabase.sql"
 ```
 
+
+Dump data in mysql db-- for WIndows users
+```
+Get-Content "./database-dump/mysqlsampledatabase.sql" | docker exec -i mysql sh -c 'exec mysql -uroot -p"$MYSQL_ROOT_PASSWORD"
+```
 
 
 We will design Star Schema so that we can export above attached OLTP to OLAP
